@@ -1,6 +1,5 @@
 import React from "react"
 import "react-toastify/dist/ReactToastify.css"
-import regeneratorRuntime from "regenerator-runtime"
 import { ToastContainer } from "react-toastify"
 import { AppProps } from "next/app"
 

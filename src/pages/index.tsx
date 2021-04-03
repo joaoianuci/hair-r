@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useEffect } from "react"
+import ReactGA from "react-ga"
 import { Container, Footer } from "../styles/index"
 import MoonLoader from "react-spinners/PulseLoader"
 
@@ -13,6 +14,10 @@ interface APIResponse {
 }
 
 const Home: React.FC = () => {
+  useEffect(() => {
+    ReactGA.initialize("UA-162897605-1")
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }, [])
   const [selectedFile, setSelectedFile] = useState<Buffer>()
   const [loading, setLoading] = useState<boolean>(false)
   const [apiResponse, setApiResponse] = useState<APIResponse>()

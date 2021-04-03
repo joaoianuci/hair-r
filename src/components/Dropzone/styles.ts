@@ -1,19 +1,25 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
+  background-color: #e1faec;
+  border-radius: 100%;
+  border: solid 10px;
+  border-color: ${(props) => props.theme.colors.secondary};
   height: 425px;
   min-height: 425px;
-  background: #e1faec;
-  border-radius: 100%;
-  border: solid  10px;
-  border-color: ${(props) => props.theme.colors.secondary};
   width: 450px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 48px;
+  margin-top: 24px;
   outline: 0;
   position: relative;
+
+  @media (max-width: 475px) {
+    min-height: calc(100vw - 25px);
+    height: calc(100vw - 25px);
+    width: calc(100% - 25px);
+  }
 
   & > img {
     width: 100%;
